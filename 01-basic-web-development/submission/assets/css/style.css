@@ -1,0 +1,328 @@
+/* Basic view */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  background-image: url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.jumbotron > .title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.jumbotron > .subtitle {
+  font-family: "Caveat", cursive;
+  font-size: 1.5em;
+  text-align: center;
+  color: #ffcf9d;
+}
+
+nav {
+  background-color: #004225;
+  padding: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  flex: 70%;
+  padding: 20px;
+  border-radius: 0.5rem;
+  min-height: 640px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 0.25rem;
+  background-color: #f1efef;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  display: block;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  padding: 8px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  color: #b2533e;
+  text-decoration: none;
+}
+
+.article-title:hover {
+  color: #004225;
+}
+
+aside {
+  flex: 30%;
+  padding: 20px;
+  border-radius: 0.5rem;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile-img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-desc {
+  margin-left: 15px;
+}
+
+.profile-desc a {
+  text-decoration: none;
+}
+
+.profile-desc a:hover {
+  background-color: #ffcf9d;
+  font-weight: bold;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  padding: 5px 10px 5px 0;
+}
+
+.menu-logo a {
+  color: #fff;
+}
+
+.menu-item {
+  padding: 15px;
+}
+
+.menu-item a {
+  color: #fff;
+}
+
+.menu-item a:hover {
+  color: #004225;
+}
+
+.menu-item:hover {
+  background-color: #ffb000;
+}
+
+.pagination {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.pagination a {
+  padding: 10px 20px;
+  background-color: #004225;
+  transition: background-color 0.3s;
+  margin: 0 5px;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #ffb000;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ffcf9d;
+  border-radius: 5px;
+}
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #cd5c08;
+  color: #ffb000;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Desktop view */
+@media only screen and (min-width: 960px) {
+  .menu {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+
+  .menu-logo {
+    order: 0;
+  }
+
+  .menu-item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .profile {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .profile-img {
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .profile-desc {
+    margin-left: 15px;
+  }
+}
+
+/* Tablet view */
+@media only screen and (max-width: 960px) {
+  .menu {
+    justify-content: center;
+  }
+
+  .menu-logo {
+    flex: 1;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .profile-desc {
+    margin-left: 0;
+  }
+}
+
+/* Mobile view */
+@media only screen and (max-width: 700px) {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 15px 5px;
+  }
+
+  .menu-toggle {
+    order: 1;
+    display: block;
+    font-size: 15px;
+  }
+
+  .menu-toggle a {
+    color: #fff;
+  }
+
+  .menu-item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .active .menu-item {
+    display: block;
+  }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+h4,
+p {
+  padding: 8px;
+  word-wrap: normal;
+}
+
+p a {
+  color: #004225;
+}
+
+p small {
+  color: #7d7c7c;
+}
